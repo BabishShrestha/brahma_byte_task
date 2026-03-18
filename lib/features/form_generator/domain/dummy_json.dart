@@ -1,4 +1,4 @@
-const _formJson = {
+const formJson = {
   "form": {
     "title": "Car Insurance Application",
     "steps": [
