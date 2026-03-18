@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:todo_app/features/form_generator/cubit/form_generator_cubit.dart';
-import 'package:todo_app/features/form_generator/cubit/form_generator_state.dart';
+import 'package:todo_app/features/form_generator/view/cubit/form_generator_cubit.dart';
+import 'package:todo_app/features/form_generator/view/cubit/form_generator_state.dart';
 import 'package:todo_app/features/form_generator/data/form_local_storage.dart';
 import 'package:todo_app/features/form_generator/view/widgets/step_content.dart';
 

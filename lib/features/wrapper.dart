@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/e_commerce/view/e_commerce_view.dart';
 import 'package:todo_app/features/form_generator/view/form_view.dart';
 import 'package:todo_app/features/method_channel/method_channel_view.dart';
 import 'package:todo_app/features/nested_bottom_navigation/nested_navigation_view.dart';
@@ -32,7 +33,14 @@ class Wrapper extends StatelessWidget {
               ).push(MaterialPageRoute(builder: (context) => const FormView()));
             },
           ),
-          ElevatedButton(child: const Text('E-Commerce'), onPressed: () {}),
+          ElevatedButton(
+            child: const Text('E-Commerce'),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const ECommerceView()),
+              );
+            },
+          ),
           ElevatedButton(
             child: const Text('Method Channel'),
             onPressed: () {

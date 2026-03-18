@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:todo_app/features/form_generator/data/form_local_storage.dart';
 import 'package:todo_app/features/form_generator/domain/dummy_json.dart';
 import 'package:todo_app/features/form_generator/domain/form_schema.dart';
-import 'package:todo_app/features/form_generator/cubit/form_generator_state.dart';
+import 'package:todo_app/features/form_generator/view/cubit/form_generator_state.dart';
 
 class FormGeneratorCubit extends Cubit<FormGeneratorState> {
   FormGeneratorCubit(this._localStorage)
@@ -11,7 +11,12 @@ class FormGeneratorCubit extends Cubit<FormGeneratorState> {
   final FormLocalStorage _localStorage;
 
   Future<void> initialize() async {
-    emit(state.copyWith(status: FormGeneratorStatus.loading, clearErrorMessage: true));
+    emit(
+      state.copyWith(
+        status: FormGeneratorStatus.loading,
+        clearErrorMessage: true,
+      ),
+    );
 
     try {
       final schema = FormSchema.fromMap(formJson);
@@ -209,7 +214,9 @@ class FormGeneratorCubit extends Cubit<FormGeneratorState> {
         }
       }
 
-      if (input.numberOnly && value != null && value.toString().trim().isNotEmpty) {
+      if (input.numberOnly &&
+          value != null &&
+          value.toString().trim().isNotEmpty) {
         final isNumber = num.tryParse(value.toString()) != null;
         if (!isNumber) {
           errors[input.key] = '${input.label} must be numeric';
